@@ -22,6 +22,12 @@ Each sheet is treated as a separate table and is handled independently through A
 
 Upload a structured Excel file. Returns a `file_id` which will be used in all further requests.
 
+### file id example
+
+```
+ "file_id": "4e146551-9246-4d28-9ec9-5e91d8225fdb"
+```
+
 - **Input**: `.xlsx` file (multi-sheet Excel)
 - **Response**: `{ "file_id": "abc123", "tables": ["sheet1", "sheet2", ...] }`
 
@@ -33,7 +39,7 @@ Returns the list of table names (sheet names) in the uploaded Excel file.
 
 ### output
 
-```bash
+```
 {
   "tables": [
     "investment measures",
@@ -46,17 +52,47 @@ Returns the list of table names (sheet names) in the uploaded Excel file.
     "operating cashflows"
   ]
 }
----
 ```
+---
 ### 3. `GET /get_rows?file_id=...&table_name=...`
 
 Returns all row names from the first column of the selected sheet.
 
+```
+{
+  "table_name": "operating cashflows",
+  "row_names": [
+    "Lifetime Index",
+    "Revenues",
+    " -Var. Expenses",
+    " - Fixed Expenses",
+    "EBITDA",
+    " - Depreciation",
+    "EBIT",
+    " -Tax",
+    "EBIT(1-t)",
+    " + Depreciation",
+    " - ∂ Work. Cap",
+    "NATCF",
+    "Discount Factor",
+    "Discounted CF"
+  ]
+}
+```
 ---
 
 ### 4. `GET /row_sum?file_id=...&table_name=...&row_name=...`
 
 Returns the **horizontal sum of numeric values** from a specific row across all columns (excluding the row name column). Non-numeric or string values are ignored during summing.
+
+```
+{
+  "table": "operating cashflows",
+  "row": "Revenues",
+  "sum": 537024.0000000001
+}
+
+```
 
 ---
 
@@ -75,7 +111,7 @@ your-project/
 
 ---
 
-## 🛠Setup Instructions
+## Setup Instructions
 
 Follow the steps below to run the project on your system:
 
