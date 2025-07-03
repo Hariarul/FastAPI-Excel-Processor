@@ -106,4 +106,4 @@ async def row_sum(
 
 # Run with: uvicorn myfile:app --reload
 if __name__ == "__main__":
-    uvicorn.run("myfile:app", host="127.0.0.1", port=9090, reload=True)
+    uvicorn.run("myfile:app", host="localhost", port=9090, reload=True)
