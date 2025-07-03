@@ -22,14 +22,14 @@ Each sheet is treated as a separate table and is handled independently through A
 
 Upload a structured Excel file. Returns a `file_id` which will be used in all further requests.
 
-### Example `file id `
+- **Input**: `.xlsx` file (multi-sheet Excel)
+- **Response**: `{ "file_id": "abc123", "tables": ["sheet1", "sheet2", ...] }`
+
+### Example output `file id `
 
 ```
  "file_id": "4e146551-9246-4d28-9ec9-5e91d8225fdb"
 ```
-
-- **Input**: `.xlsx` file (multi-sheet Excel)
-- **Response**: `{ "file_id": "abc123", "tables": ["sheet1", "sheet2", ...] }`
 
 ---
 
@@ -115,7 +115,7 @@ your-project/
 
 ---
 
-### Setup Instructions
+## Setup Instructions
 
 Follow the steps below to run the project on your system:
 
