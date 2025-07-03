@@ -31,8 +31,23 @@ Upload a structured Excel file. Returns a `file_id` which will be used in all fu
 
 Returns the list of table names (sheet names) in the uploaded Excel file.
 
----
+### output
 
+```bash
+{
+  "tables": [
+    "investment measures",
+    "growth rates",
+    "working capital",
+    "discount rate",
+    "cashflow details",
+    "initial investment",
+    "book value & depreciation",
+    "operating cashflows"
+  ]
+}
+---
+```
 ### 3. `GET /get_rows?file_id=...&table_name=...`
 
 Returns all row names from the first column of the selected sheet.
